@@ -8,3 +8,4 @@ The config.properties file should look like:
 db_username=<username>
 db_password=<password>
 db_url=<insert url>
+
