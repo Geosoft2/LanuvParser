@@ -1,1 +1,6 @@
-Software Project for my study at the WWU Muenster, Germany.
+LanuvParser
+===========
+
+LanuvParser for the stations in Muenster, Germany
+
+The final files are in /Dokumente/Lanuv-Parser/src
