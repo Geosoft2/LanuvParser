@@ -1,32 +1,46 @@
-/*
- * The class for saving and controlling of the parsed measured value by the Lanuv-Page.
+/**
+ * Class for saving and controlling of the parsed measured value by the Lanuv-Page.
  * The class shows a row of measurings at a certain time.
- * 
- * 
- * created on 11.12.2012 by Sven Mattauch
- * edited on 02.01.2013 by Sven Mattauch 
- * edited on 17.01.2013 by Sven Mattauch
+
+ * @author Sven M.
+ *
  */
 public class Measurement {
 	
 	/*
 	 * Double data types for saving of the measured values.
 	 */
-	private double ltem = 0;
-	private double wri = 0;
-	private double wges = 0;
-	private double rfeu = 0;
-	private double ozon = 0;
-	private double no2 = 0;
-	private double no = 0;
-	private double so2 = 0;
-	private double pm10 = 0;
+	private int hour = 0;
+	private int min = 0;
+	private double ltem = -1;
+	private double wri = -1;
+	private double wges = -1;
+	private double rfeu = -1;
+	private double ozon = -1;
+	private double no2 = -1;
+	private double no = -1;
+	private double so2 = -1;
+	private double pm10 = -1;
 	private String time = "00:00";
 	
 	
 	/*
 	 * All needed set- and get-methods for the data types.
 	 */
+
+	int getHour (){
+		return hour;
+	}
+
+	int getMin(){
+		return min;
+	}
+	void setHour(int x){
+		hour = x;
+	}
+	void setMin(int x){
+		min = x;
+	}
 	
 	double getLtem (){
 		return ltem;
@@ -89,5 +103,4 @@ public class Measurement {
 	void setWges (double x) {
 		wges = x;
 	}
-
 }
