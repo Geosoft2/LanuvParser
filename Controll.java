@@ -35,7 +35,6 @@ public class Controll {
 	
 	/**
 	 * Main-Method. Initiate the Parsing of the Lanuv-Stations and fill the database with the metadata if its needed.
-	 * @throws Exception
 	 */
 	public static void main (String[] args){
 		logger.info("Programm start");

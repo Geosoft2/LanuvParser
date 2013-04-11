@@ -177,7 +177,6 @@ public class DBConnection {
 				System.exit(1);
             }
         }
-        logger.info("Date: " + dateSet[0]+ dateSet[1]+dateSet[2]+dateSet[3]+dateSet[4]);
         //return the int[] with the last values
         return dateSet;
     }
@@ -265,7 +264,7 @@ public class DBConnection {
                     		"', '" + phenomen_id +"', '" + offering_id +"', '" + text_value + "', '" + numeric_value + "')";
                 	
                 	
-                    logger.info(time_stamp + phenomen_id + numeric_value);
+                    //logger.info(time_stamp + phenomen_id + numeric_value);
                 	
                     query.executeUpdate(sql, Statement.RETURN_GENERATED_KEYS);
         			//save the keys for linking to quality table
