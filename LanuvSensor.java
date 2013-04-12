@@ -42,11 +42,11 @@ public class LanuvSensor {
 	
 	
 	//String phenomen_id
-	private static String phenomen_id_ozon = "urn:x-ogc:o3:uom:microg/m3";
-	private static String phenomen_id_no = "urn:x-ogc:no:uom:microg/m3";
-	private static String phenomen_id_no2 = "urn:x-ogc:no2:uom:microg/m3";
-	private static String phenomen_id_so2 = "urn:x-ogc:so2:uom:microg/m3";
-	private static String phenomen_id_pm10 = "urn:x-ogc:pm10:uom:microg/m3";
+	private static String phenomen_id_ozon = "urn:x-ogc:def:phenomenon:OGC:o3:uom:microg/m3";
+	private static String phenomen_id_no = "urn:x-ogc:def:phenomenon:OGC:no:uom:microg/m3";
+	private static String phenomen_id_no2 = "urn:x-ogc:def:phenomenon:OGC:no2:uom:microg/m3";
+	private static String phenomen_id_so2 = "urn:x-ogc:def:phenomenon:OGC:so2:uom:microg/m3";
+	private static String phenomen_id_pm10 = "urn:x-ogc:def:phenomenon:OGC:pm10:uom:microg/m3";
 	
 	//String mit FOI
 	public static ArrayList<String> fillInfoListWeseler(){
