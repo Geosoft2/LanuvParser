@@ -13,11 +13,11 @@ public class LanuvSensor {
 	static ArrayList<String> infoListGeist = fillInfoListGeist();
 	
 	//String procedure
-	private static String procedure_id_ozon = "urn:ogc:object:feature:Sensor:LANUV:ozon-sensor";
-	private static String procedure_id_no = "urn:ogc:object:feature:Sensor:LANUV:no-sensor";
-	private static String procedure_id_no2 = "urn:ogc:object:feature:Sensor:LANUV:no2-sensor";
-	private static String procedure_id_so2 = "urn:ogc:object:feature:Sensor:LANUV:so2-sensor";
-	private static String procedure_id_pm10 = "urn:ogc:object:feature:Sensor:LANUV:pm10-sensor";
+	private static String procedure_id_ozon = "urn:ogc:object:feature:Sensor:lanuv-ozon-sensor";
+	private static String procedure_id_no = "urn:ogc:object:feature:Sensor:lanuv-no-sensor";
+	private static String procedure_id_no2 = "urn:ogc:object:feature:Sensor:lanuv-no2-sensor";
+	private static String procedure_id_so2 = "urn:ogc:object:feature:Sensor:lanuv-so2-sensor";
+	private static String procedure_id_pm10 = "urn:ogc:object:feature:Sensor:lanuv-pm10-sensor";
 	
 	//String offerings
 	private static String o3Offering = "O3_CONCENTRATION";
@@ -34,19 +34,19 @@ public class LanuvSensor {
 	private static String phenomenon_description_pm10 = "PM10-1";
 	
 	//String unit
-	private static String unit_ozon = "µg/m³";
-	private static String unit_no = "µg/m³";
-	private static String unit_no2 = "µg/m³";
-	private static String unit_so2 = "µg/m³";
-	private static String unit_pm10 = "µg/m³";
+	private static String unit_ozon = "microg/m3";
+	private static String unit_no = "microg/m3";
+	private static String unit_no2 = "microg/m3";
+	private static String unit_so2 = "microg/m3";
+	private static String unit_pm10 = "microg/m3";
 	
 	
 	//String phenomen_id
-	private static String phenomen_id_ozon = "urn:x-ogc:o3:uom:µg/m³";
-	private static String phenomen_id_no = "urn:x-ogc:ogc:no:uom:µg/m³";
-	private static String phenomen_id_no2 = "urn:x-ogc:no2:uom:µg/m³";
-	private static String phenomen_id_so2 = "urn:x-ogc:so2:uom:µg/m³";
-	private static String phenomen_id_pm10 = "urn:x-ogc:PM10-1:uom:µg/m³";
+	private static String phenomen_id_ozon = "urn:x-ogc:o3:uom:microg/m3";
+	private static String phenomen_id_no = "urn:x-ogc:no:uom:microg/m3";
+	private static String phenomen_id_no2 = "urn:x-ogc:no2:uom:microg/m3";
+	private static String phenomen_id_so2 = "urn:x-ogc:so2:uom:microg/m3";
+	private static String phenomen_id_pm10 = "urn:x-ogc:pm10:uom:microg/m3";
 	
 	//String mit FOI
 	public static ArrayList<String> fillInfoListWeseler(){

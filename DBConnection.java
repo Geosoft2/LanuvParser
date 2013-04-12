@@ -6,6 +6,7 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.Calendar;
+import java.util.Date;
 import java.util.Properties;
 import java.io.FileNotFoundException;
 import java.io.IOException;
@@ -75,7 +76,6 @@ public class DBConnection {
 			logger.warn("File not found", e);
 			e.printStackTrace();
 		} catch (IOException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
     }
@@ -130,15 +130,16 @@ public class DBConnection {
                 query = conn.createStatement();
 
                 //Get results from the DB
-                String sql = "SELECT max(time_stamp) FROM observation WHERE feature_of_interest_id='" + station +"'";
+                String sql = "SELECT max(time_stamp) as Date FROM observation WHERE feature_of_interest_id='" + station +"'";
                 ResultSet result = query.executeQuery(sql);
                 result.next();
                 
                 //commit the DB result to the java timestamp
                 java.sql.Timestamp timeStamp = result.getTimestamp(1);
                 if (timeStamp != null){
-                	java.sql.Date date = new java.sql.Date(timeStamp.getTime());
-                    
+                	//java.sql.Date date = new java.sql.Date(timeStamp.getTime());
+                    Date date = result.getDate("Date");
+                	
                     lastDate.setTime(date);
                     
                     //commit the date data to the int[]
@@ -150,6 +151,7 @@ public class DBConnection {
                     
                     int[] tmp = {y, m, d, h, min};
                     dateSet = tmp;
+                    logger.info("Get date from DB");
                 }
                 else if (timeStamp == null){
                 	//if there is no last timestamp in the db than the db is empty and the programm return the last 7 days
@@ -163,6 +165,7 @@ public class DBConnection {
                     
                     int[] tmp = {y, m, d, h, min};
                     dateSet = tmp;
+                    logger.info("create own date");
                     
                 }
                  
@@ -195,7 +198,7 @@ public class DBConnection {
                 // get the result sets from the db
                 String sql = "SELECT time_stamp, procedure_id, feature_of_interest_id, phenomenon_id," +
                 		" offering_id, text_value, numeric_value, spatial_value, observation_id, mime_type"
-                		+ " FROM observation"
+                		+ " FROM observation WHERE feature_of_interest_id='Weseler'"
                         + " ORDER BY observation_id";
                 ResultSet result = query.executeQuery(sql);
  
@@ -259,7 +262,9 @@ public class DBConnection {
                     		" offering_id, text_value, numeric_value)" +
                     		" VALUES('" + time_stamp + "', '" + procedure_id +"', '" + feature_of_interest_id +
                     		"', '" + phenomen_id +"', '" + offering_id +"', '" + text_value + "', '" + numeric_value + "')";
-                    
+                	
+                	
+                    //logger.info(time_stamp + phenomen_id + numeric_value);
                 	
                     query.executeUpdate(sql, Statement.RETURN_GENERATED_KEYS);
         			//save the keys for linking to quality table
